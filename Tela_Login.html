@@ -15,22 +15,37 @@
         <form>
             <h1>Login</h1>
             <div class="input-container">
-                <input placeholder="Email" type="email" required>
+                <input placeholder="Email" id="email" type="email" required>
                 <img width="20" height="20" src="https://img.icons8.com/material-rounded/24/user-male-circle.png" alt="user-male-circle"/>
             </div>
 
             <div class="input-container">
-                <input placeholder="Senha" type="password" required>
+                <input placeholder="Senha" id="senha" type="password" required>
                 <img width="20" height="20" src="https://img.icons8.com/material-rounded/24/lock--v1.png" alt="lock--v1"/>
-               <a href="#">Esqueci minha senha</a> 
+               <a href="Esqueci_Senha.html">Esqueci minha senha</a> 
             </div>
 
-            <button type="submit" class="submit-button">Entrar</button>
+            <button type="submit" class="submit-button" onclick="logar(); return false">Entrar</button>
 
             <div class="register-link">
-                <p>Não está cadastrado? <a href="#">Cadastrar</a> </p>
+                <p>Não está cadastrado? <a href="Tela_cadastro.html">Cadastrar</a> </p>
             </div>
         </form>
     </div>
+
+    <script>
+        function logar(){
+
+            var login = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+
+            if(login == "admin@administrador.com" && senha =="spider"){
+                alert("Sucesso"); 
+                location.href  = "inicio.html";
+             }else {
+                alert("Ususario ou senha incorretos");
+             }
+        }
+    </script>
 </body>
 </html>
